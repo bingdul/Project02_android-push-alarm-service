@@ -1,0 +1,5 @@
+# Project exclude paths
+/springboot2-webservice/.gradle/
+/springboot2-webservice/build/
+/springboot2-webservice/build/classes/java/main/
+/springboot2-webservice/build/classes/java/test/

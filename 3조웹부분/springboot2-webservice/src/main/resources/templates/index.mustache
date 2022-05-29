@@ -1,0 +1,172 @@
+{{>layout/header}}
+<a style="position:fixed; bottom:10px; right:10px;" href="#" title="맨 위로">
+    <img src="img/up.png">
+</a>
+
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <a class="navbar-bran" href="/"><img src="img/logov2rem.png"  alt="Seven HTML theme"  /></a>
+
+            <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+
+                <ul class="nav navbar-nav">
+                    <!--<li><a data-scroll href="index.html#home">로그인</a></li> -->
+                    {{^usrname}}
+                    <li><a href="/loginForm">로그인</a></li>
+                    {{/usrname}}
+                    {{#usrname}}
+
+                    <li>
+                        <a href="/logout">로그아웃</a>
+                    </li>
+
+
+                    <li><a href="/machine">기계 제어</a></li>
+                    <li><a href="/chart">통계</a></li>
+                    <li><a data-scroll href="index.html#services">프로젝트 개요</a></li>
+                    {{/usrname}}
+                    {{#usrname}}
+                    <li>
+                       <span style="color: blue"> {{usrname}}님<br>환영합니다.</span>
+                    </li>
+                    {{/usrname}}
+                    <!--<li><a data-scroll href="index.html#blog">News</a></li>
+                    <li><a data-scroll href="index.html#contact">Contact</a></li>-->
+                </ul>
+            </div>
+        </div>
+        </nav>
+
+</header>
+<div id="home" class="jumbotron slide slide-fullscreen">
+    <div class="container" style="position: relative">
+        <span>스마트팩토리 3조</span>
+        <h1>미니프로젝트 & 제철소제어 시스템</h1>
+        {{^usrname}}
+                <a href="/loginForm" class="btn btn-lg btn-primary button--ujarak">로그인하기</a>
+         {{/usrname}}
+        {{#usrname}}
+
+                <ul class="nav navbar-nav nav--center" >
+                    <li>
+                        <a href="/machine" class="btn btn-lg btn-primary button--ujarak" style="width: 200px">    제어    </a>
+                    </li>
+                    <li>
+                        <a href="/chart" class="btn btn-lg btn-primary button--ujarak"style="width: 200px">    통계    </a>
+                    </li>
+                    <li>
+                        <a data-scroll href="index.html#services" class="btn btn-lg btn-primary button--ujarak"style="width: 200px">프로젝트 소개</a>
+                    </li>
+                    <li>
+                        <a href="/board" class="btn btn-lg btn-primary button--ujarak"style="width: 200px">    공지사항    </a>
+                    </li>
+                </ul>
+
+        {{/usrname}}
+    </div>
+</div>
+<!-- Start services section -->
+<section id="services">
+    <div class="container">
+        <header>
+            <h2 class="wow fadeInDown">프로젝트 목표</h2>
+            <br>
+            <p class="wow fadeInUp" data-wow-delay="0.1s">저희 3조 프로젝트는 웹에서 특정서비스를 이용할시 서버를 거쳐<br>
+                안드로이드 폰에 푸쉬알람이 가게 하는 프로젝트입니다.<br>
+                <br>또한 최종프로젝트와 연계하여 제철소를 주제로한 사이트를 만들었습니다
+            </p>
+        </header>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="service-item text-right wow fadeInUp">
+                    <div class="service-text">
+                        <h3>웹보안</h3>
+                        <p>최종프로젝트의 메인 주제이며<br>저희는 각종 인터넷에서 일어날수있는<br>보안 문제를 해결하여 웹사이트의<br>신뢰성을 높였습니다
+                        </p>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                </div>
+                <div class="service-item text-right wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-text">
+                        <h3>푸쉬알람</h3>
+                        <p>이번 미니프로젝트의 주제이며 각종<br>이벤트를 웹서버를 통해 안드로이드폰으로 푸시알람을 하게 해줍니다
+                        </p>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="img/factory.png" alt="Phone" />
+            </div>
+            <div class="col-md-4">
+                <div class="service-item text-left wow fadeInUp">
+                    <div class="service-text">
+                        <h3>기계제어</h3>
+                        <p>실시간으로 사용자(admin)이 웹으로<br>로그인해서 비상상황대처와 기계제어를 통해 스마트팩토리의 장점을 부각시켰습니다
+                        </p>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                </div>
+                <div class="service-item text-left wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-text">
+                        <h3>통계</h3>
+                        <p>전체적인 기계설비의 현황과, 각종 용광로의 온도, 원자재와 완제품의 재고등을 파악하기위해 통계페이지를 만들었습니다
+                        </p>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fa fa-bar-chart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="video-wrapper clearfix">
+        <div class="col-md-offset-1 col-md-10 video">
+            <a href="https://www.youtube.com/watch?v=dXTIt94ZaGo" id="popup-youtube" class="circled fa fa-play" ></a>
+            <h3>제철소 스마트팩토리 시연영상</h3>
+            <p>포항 포스코</p>
+        </div>
+    </div>
+</section>
+<!-- End services section -->
+<!-- Start portfolio section -->
+
+<section id="about">
+    <div class="baner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 box">
+                    <h3>팀 로고의 의미</h3>
+                    <span class="delimiter"></span>
+                    <p>팀 이름은 보안회사인 세콤과 달달하다의 달콤이 합쳐진 의미로 말그래로 보안이 달달하는 의미의 로고이다
+                        팀로고는 창과 방패를 X자로 교차한형태로 단단함을 상징하는 로고로 디자인하였다
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<br><br>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2021-2022 (주)secom dalcom</p>
+
+    </footer>
+{{>layout/footer}}
